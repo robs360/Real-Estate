@@ -1,0 +1,82 @@
+[
+    {
+      "id": 1,
+      "relevant_image": "https://i.ibb.co/1JhT4c6/json11.jpg",
+      "segment_name": "Apartment",
+      "estate_title": "Luxury Apartment in Downtown",
+      "description": "Modern and spacious apartment with stunning city views.",
+      "price": 5000,
+      "status": "sale",
+      "area": 1500,
+      "location": "Downtown, New York",
+      "facilities": ["Swimming Pool", "Gym", "Parking"],
+      "details_button": "Details"
+    },
+    {
+      "id": 2,
+      "relevant_image": "https://i.ibb.co/yR81MyY/json2.jpg",
+      "segment_name": "House",
+      "estate_title": "Cozy Family House in Suburbia",
+      "description": "Charming house with a large backyard, perfect for families.",
+      "price": 3500,
+      "status": "sale",
+      "area": 2000,
+      "location": "Suburbia, California",
+      "facilities": ["Backyard", "Garage", "Fireplace"],
+      "details_button": "Details"
+    },
+    {
+      "id": 3,
+      "relevant_image": "https://i.ibb.co/Pw2trdd/json3.jpg",
+      "segment_name": "Condo",
+      "estate_title": "Modern Condo with Ocean View",
+      "description": "Sleek condo with panoramic ocean views, ideal for relaxation.",
+      "price": 7000,
+      "status": "sale",
+      "area": 1200,
+      "location": "Beachfront, Florida",
+      "facilities": ["Beach Access", "Fitness Center", "Security"],
+      "details_button": "Details"
+    },
+    {
+      "id": 4,
+      "relevant_image": "https://i.ibb.co/wynPtZN/json4.jpg",
+      "segment_name": "Townhouse",
+      "estate_title": "Spacious Townhouse in Historic District",
+      "description": "Historic townhouse with modern amenities and classic charm.",
+      "price": 4500,
+      "status": "rent",
+      "area": 1800,
+      "location": "Historic District, Boston",
+      "facilities": ["Historic Architecture", "Courtyard", "Walkability"],
+      "details_button": "Details"
+    },
+    {
+      "id": 5,
+      "relevant_image": "https://i.ibb.co/YRTmxBc/json5.jpg",
+      "segment_name": "Duplex",
+      "estate_title": "Contemporary Duplex in Trendy Neighborhood",
+      "description": "Stylish duplex with a rooftop terrace, perfect for urban living.",
+      "price": 6000,
+      "status": "sale",
+      "area": 1600,
+      "location": "Trendy Neighborhood, Seattle",
+      "facilities": ["Rooftop Terrace", "Modern Design", "Walkable Area"],
+      "details_button": "Details"
+    },
+    {
+      "id": 6,
+      "relevant_image": "https://i.ibb.co/zNrRMfL/json6.jpg",
+      "segment_name": "Villa",
+      "estate_title": "Luxurious Villa with Private Pool",
+      "description": "Exquisite villa with lush gardens and a private swimming pool.",
+      "price": 12000,
+      "status": "sale",
+      "area": 3000,
+      "location": "Countryside, France",
+      "facilities": ["Private Pool", "Gardens", "Privacy"],
+      "details_button": "Details"
+    }
+
+  ]
+  
