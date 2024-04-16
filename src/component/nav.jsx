@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from '../assets/images/logo.png'
 const Nav = () => {
     return (
-        <div className="navbar bg-base-100 w-[98%] md:w-[95%] mx-auto bg-blue-400 mb-14">
+        <div className="navbar bg-base-100 w-[98%] md:w-[95%] mx-auto bg-blue-900 mb-14">
             <div className="navbar-start">
                 <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -10,7 +10,7 @@ const Details = () => {
     return (
         <div className="w-[95%] mx-auto mt-16">
             <div className="w-full min-h-[80vh] flex md:flex-row flex-col space-x-3 md:space-x-6 justify-center mt-11">
-                <div className=" bg-gray-100 rounded-lg px-2 md:px-6 py-4">
+                <div className=" bg-gray-100 rounded-lg px-2 md:px-6 py-4" data-aos="flip-left">
                     <img src={singleInfo.relevant_image}
                         className="w-[320px] h-[330px] lg:w-[360px] lg:h-[380px] mx-auto"
                         alt="" srcset="" />

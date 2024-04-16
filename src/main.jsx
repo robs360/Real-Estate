@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './component/Banner.jsx';
 import Details from './component/details.jsx';
+import Register from './component/register.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         path:'/details/:id',
         loader:()=>fetch('/blog.json'),
         element:<Details></Details>
+      },
+      {
+        path:'/reg',
+        element:<Register></Register>
       }
     ]
   },
