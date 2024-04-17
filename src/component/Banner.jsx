@@ -17,7 +17,7 @@ const Home = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         width: '94%',
-        height: '100vh',
+        minHeight: '100vh',
     };
     const bannerStyle = {
 
@@ -26,7 +26,7 @@ const Home = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         width: '100%',
-        height: '100vh',
+        miheight: '100vh',
     }
     return (
 
