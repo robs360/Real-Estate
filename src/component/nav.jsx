@@ -13,7 +13,7 @@ const Nav = () => {
     }
     console.log(url)
     return (
-        <div className="navbar text-white bg-base-100 w-[98%] md:w-[95%] mx-auto bg-blue-900 mb-14">
+        <div className="navbar text-white w-[98%] md:w-[96%] mx-auto bg-blue-900 mb-14">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

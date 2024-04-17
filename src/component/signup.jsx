@@ -50,7 +50,7 @@ const Signup = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        width: '94%',
+        width: '95%',
         height: '80vh',
     };
 
