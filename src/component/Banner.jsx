@@ -26,7 +26,7 @@ const Home = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         width: '100%',
-        miheight: '100vh',
+        minHeight: '100vh'
     }
     return (
 

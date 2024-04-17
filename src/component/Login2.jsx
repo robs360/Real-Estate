@@ -4,10 +4,13 @@ import google from '../assets/images/google.png'
 import git from '../assets/images/github.png'
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "./AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
 
     const { signIn } = useContext(AuthContext);
-
+    const location=useLocation()
+    const navigate=useNavigate();
+    console.log(location)
     const subStyle = {
         backgroundImage: `url(${sec})`,
         backgroundSize: 'cover',
@@ -15,7 +18,7 @@ const Login = () => {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         width: '94%',
-        height: '80vh',
+        minheight: '80vh',
     };
 
     const onSubmit=(e)=>{
@@ -24,7 +27,9 @@ const Login = () => {
         const Password=e.target.password.value;
         console.log(Email,' ',Password)
         signIn(Email,Password)
-        .then(res=>console.log(res.user))
+        .then(res=>{console.log(res.user)
+           navigate(location?.state? location.state:'/')
+        })
         .catch(error=>console.error(error))
     }
     return (

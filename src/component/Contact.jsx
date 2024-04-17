@@ -9,13 +9,13 @@ const Contact = () => {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'left',
         width: '94%',
-        height: '80vh',
+        minHeight: '60vh'
     };
     return (
         <div className="mx-auto flex items-center pl-6" style={subStyle}>
-            <div className="rounded-md w-[350px] p-2 h-[500px] md:w-[470px] bg-[#ffffff80]">
+            <div className="rounded-md w-[350px] p-2 h-[400px] md:w-[470px] bg-[#ffffff80]">
                 <form>
-                     <textarea className="w-full h-[300px]" placeholder="Type our opinion">
+                     <textarea className="w-full h-[200px]" placeholder="Type our opinion">
 
                      </textarea>
                     <input type="email" name="email" placeholder="Email" className="input input-bordered mb-3 w-full " />

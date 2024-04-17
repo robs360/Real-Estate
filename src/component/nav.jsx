@@ -7,7 +7,7 @@ const Nav = () => {
     const { user, logOut, url } = useContext(AuthContext);
     console.log(user);
     const handleClick = () => {
-        logOut()
+             logOut()
             .then(res => console.log(res.user))
             .catch(error => console.error(error))
     }
@@ -61,14 +61,14 @@ const Nav = () => {
                              <img className="w-[30px] h-[30px] rounded-[50%]"
                               src={url} alt="" srcset="" />
                             <button onClick={handleClick} 
-                            className="btn glass text-xl font-semibold">
+                            className="btn glass text-xl font-semibold text-white">
                                 Logout</button>
                         </div>
 
                     ) : (
 
                         <Link to="/log">
-                            <a className="btn text-xl">Login</a>
+                            <a className="btn text-xl font-bold text-blue-900">Login</a>
                         </Link>
                     )
                 }
