@@ -8,10 +8,14 @@ import {
 } from "react-router-dom";
 import Home from './component/Banner.jsx';
 import Details from './component/details.jsx';
-import Register from './component/Register.jsx';
+
 import Login from './component/Login2.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import AuthProvider from './component/AuthProvider.jsx';
+import Signup from './component/signup.jsx';
+
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,13 +30,14 @@ const router = createBrowserRouter([
         loader: () => fetch('/blog.json'),
         element: <Details></Details>
       },
-      {
-        path: '/reg',
-        element: <Register></Register>
-      },
+    
       {
         path: '/log',
         element: <Login></Login>
+      },
+      {
+        path: '/reg',
+        element: <Signup></Signup>
       }
     ]
   },

@@ -40,9 +40,7 @@ const Details = () => {
                     <div className="border-b-2 border-black pb-8">
                         <h1 className="text-[18px]"><span className="text-xl font-medium">Description:</span>{singleInfo.description}</h1>
                     </div>
-                    <div className="border-b-2 border-black pb-8">
-                        <h1 className="text-[18px]"><span className="text-xl font-medium">Description:</span>{singleInfo.description}</h1>
-                    </div>
+                   
 
                   <div className="w-[70%] mx-auto">
                   <button className="p-2 bg-green-400 
