@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import sec from '../assets/images/login.jpg';
 import google from '../assets/images/google.png'
 import git from '../assets/images/github.png'
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "./AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
-const Login = () => {
 
+import eye from '../assets/images/eye.png' 
+import hidden from '../assets/images/hidden.png' 
+const Login = () => {
+    const [show,setShow]=useState(false);
     const { signIn,googleSignin ,gitSignin,url,setUrl} = useContext(AuthContext);
     const location=useLocation()
     const navigate=useNavigate();
@@ -46,6 +49,7 @@ const Login = () => {
         })
         .catch(error=>console.error(error))
     }
+
     return (
         <div className="w-[95%] mx-auto" style={subStyle}>
             <Helmet>
@@ -59,7 +63,23 @@ const Login = () => {
                 <form onSubmit={onSubmit}>
 
                     <input type="email"    name="email" placeholder="Email" className="input input-bordered mb-3 w-full " />
-                    <input type="password" name="password" placeholder="Password" className="input input-bordered mb-3 w-full" />
+                   <div className="w-full relative border-2 border-black">
+                       <input type={show? 'text' :"password"} name="password" placeholder="Password" className="input input-bordered mb-3 w-full" />
+                        <span className="absolute top-4 right-4">
+                            {show? <button onClick={()=>{
+                                setShow(false)
+                            }}>
+                                   <img className="w-[20px] h-[20px]" 
+                                   src={eye} alt="" srcset="" />
+                            </button>
+                            :<button onClick={()=>{
+                                setShow(true)
+                            }}>
+                                   <img className="w-[20px] h-[20px]"
+                                    src={hidden} alt="" srcset="" />
+                            </button>}
+                        </span>
+                   </div>
                     <button type="submit" className="btn glass text-xl font-semibold text-center w-full">Login</button>
                 </form>
                 <div className="w-full mt-5 border-t-2 border-gray-500">
