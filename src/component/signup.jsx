@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet-async";
 import { AuthContext } from "./AuthProvider";
 import eye from '../assets/images/eye.png' 
 import hidden from '../assets/images/hidden.png'
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 const Signup = () => {
     const { createUser, setUrl, url } = useContext(AuthContext);
     const [error,setError]=useState('')
@@ -36,6 +38,8 @@ const Signup = () => {
             })
             .catch(error => {console.error(error)
               setError('Something Went Wrong')
+
+              alert('something went worng')
             })
     }
 
@@ -53,6 +57,7 @@ const Signup = () => {
     
     return (
         <div className="w-[95%] mx-auto" style={subStyle}>
+        
             <Helmet>
                 <title> Register</title>
             </Helmet>
@@ -88,6 +93,13 @@ const Signup = () => {
                     error?<h1 className="text-red-500">{error}</h1>
                   :<h1 className="text-green-400">{Success}</h1>
                   }
+
+                  <Link to={'/log'}>
+                       <div className="w-full flex justify-center">
+                       <button className="text-center mx-auto text-[18px] font-semibold">
+                            Already have an account?</button>
+                       </div>
+                  </Link>
             </div>
         </div>
     )

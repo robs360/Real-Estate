@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import eye from '../assets/images/eye.png' 
 import hidden from '../assets/images/hidden.png' 
+import { ToastContainer, toast } from "react-toastify";
 const Login = () => {
     const [show,setShow]=useState(false);
     const { signIn,googleSignin ,gitSignin,url,setUrl} = useContext(AuthContext);
@@ -21,7 +22,7 @@ const Login = () => {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         width: '94%',
-        minheight: '80vh',
+      
     };
     const googleClicked=()=>{
         googleSignin()
@@ -34,9 +35,11 @@ const Login = () => {
     const gitClicked=()=>{
          gitSignin()
         .then(res=>{console.log(res.user)
+          
+        })
+        .catch(error=>{console.error(error)
         
         })
-        .catch(error=>console.error(error))
     }
     const onSubmit=(e)=>{
         e.preventDefault();
@@ -47,11 +50,14 @@ const Login = () => {
         .then(res=>{console.log(res.user)
            navigate(location?.state? location.state:'/')
         })
-        .catch(error=>console.error(error))
+        .catch(error=>{console.error(error)
+          alert('something went worng')
+        })
     }
 
     return (
-        <div className="w-[95%] mx-auto" style={subStyle}>
+        <div className="w-[95%] mx-auto min-h-[80vh]" style={subStyle}>
+           
             <Helmet>
                 <title>Login</title>
             </Helmet>
