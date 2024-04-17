@@ -12,7 +12,7 @@ const JsonHolder = () => {
     return (
         
         <div className="mt-10">
-            <div className="w-[95%] mx-auto rounded-md bg-blue-900 p-3">
+            <div className="w-[93%] mx-auto rounded-md bg-blue-900 p-3">
                 <h1 className="text-white text-3xl text-center
          font-semibold">Let's Choose your Best</h1>
                 <p className="text-white text-[17px] text-center

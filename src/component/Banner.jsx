@@ -7,6 +7,7 @@ import Map from "./Map";
 import animte4 from '../assets/images/animate4.jpg'
 import 'animate.css';
 import Discount from "./Discount";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
     // this is banner style
 
@@ -30,7 +31,9 @@ const Home = () => {
     return (
 
         <div>
-           
+           <Helmet>
+              <title>Home</title>
+           </Helmet>
             <div className="w-[95%] mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end" style={bannerStyle}>
 
@@ -57,7 +60,11 @@ const Home = () => {
                  
                 <Discount></Discount>
 
-                <div className="mt-10">
+                <div className="mt-10 w-[93%] mx-auto">
+                    <div className="mb-5 bg-blue-900 p-2 rounded-md">
+                         <h1 className="text-3xl font-semibold
+                         text-center text-white">Seach Your residetial places</h1>
+                    </div>
                      <Map></Map>
                 </div>
                 <Footer></Footer>

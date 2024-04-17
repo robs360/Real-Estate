@@ -10,12 +10,12 @@ const Nav = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <Link>
-                            <li className="text-[17px] font-medium"><a href="/">Home</a></li>
+                        <Link to={'/'}>
+                            <li className="text-[17px] font-medium"><a>Home</a></li>
                         </Link>
-                        <Link>
+                        <Link to={'/reg'}>
                             <li className="text-[17px] font-medium">
-                                <a>Item 2</a>
+                                <a>Register</a>
                             </li>
                         </Link>
                         <Link>
@@ -34,9 +34,9 @@ const Nav = () => {
                     <Link>
                         <li className="text-[17px] font-medium"><a href="/">Home</a></li>
                     </Link>
-                    <Link>
+                    <Link to={'/reg'}>
                         <li className="text-[17px] font-medium">
-                            <a>Item 2</a>
+                            <a>Register</a>
                         </li>
                     </Link>
                     <Link>
@@ -45,7 +45,9 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end flex space-x-2 items-center">
+                <Link to={'/log'}>
                 <a className="btn text-xl">Login</a>
+                </Link>
             </div>
         </div>
     )

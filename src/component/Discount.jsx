@@ -5,7 +5,7 @@ import json from '../assets/images/json6.jpeg'
 import room from '../assets/images/room.jpeg'
 const Discount=()=>{
     return(
-        <div className="mt-16 w-[95%] mx-auto">
+        <div className="mt-16 w-[98%] mx-auto">
              <div className="bg-blue-900 p-2 rounded-md w-[94%] mx-auto">
              <h1 className="text-white text-3xl text-center
                  font-semibold">Discounted Place</h1>
@@ -15,7 +15,7 @@ const Discount=()=>{
                   and generally in used condition. </p>
              </div>
 
-             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-16 lg:grid-cols-3">
                     <div className="bg-white rounded-md w-[320px] mx-auto p-2 shadow-lg">
                         <img className="w-[300px] h-[320px] rounded-lg"
                          src={animate4} alt="" srcset="" />
