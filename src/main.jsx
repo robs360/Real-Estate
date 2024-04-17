@@ -13,6 +13,8 @@ import Login from './component/Login2.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import AuthProvider from './component/AuthProvider.jsx';
 import Signup from './component/signup.jsx';
+import Contact from './component/Contact.jsx';
+import Private from './component/private.jsx';
 
 
 
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: '/reg',
         element: <Signup></Signup>
+      },
+      {
+        path: '/con',
+        element:<Private><Contact></Contact></Private>
       }
     ]
   },

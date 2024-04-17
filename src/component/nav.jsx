@@ -27,8 +27,8 @@ const Nav = () => {
                                 <a>Register</a>
                             </li>
                         </Link>
-                        <Link>
-                            <li className="text-[17px] font-medium"><a>Item 3</a></li>
+                        <Link to={'/con'}>
+                            <li className="text-[17px] font-medium"><a>Contact Us</a></li>
                         </Link>
                     </ul>
                 </div>
@@ -48,8 +48,8 @@ const Nav = () => {
                             <a>Register</a>
                         </li>
                     </Link>
-                    <Link>
-                        <li className="text-[17px] font-medium"><a>Item 3</a></li>
+                    <Link to={'/con'}>
+                        <li className="text-[17px] font-medium"><a>Contact Us</a></li>
                     </Link>
                 </ul>
             </div>
