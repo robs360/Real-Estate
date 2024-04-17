@@ -7,7 +7,7 @@ import { AuthContext } from "./AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn,googleSignin ,gitSignin,url,setUrl} = useContext(AuthContext);
     const location=useLocation()
     const navigate=useNavigate();
     console.log(location)
@@ -20,7 +20,21 @@ const Login = () => {
         width: '94%',
         minheight: '80vh',
     };
-
+    const googleClicked=()=>{
+        googleSignin()
+        .then(res=>{console.log(res.user)
+         setUrl(res.user.photoURL)
+         console.log(url)
+        })
+        .catch(error=>console.error(error))
+    }
+    const gitClicked=()=>{
+         gitSignin()
+        .then(res=>{console.log(res.user)
+        
+        })
+        .catch(error=>console.error(error))
+    }
     const onSubmit=(e)=>{
         e.preventDefault();
         const Email=e.target.email.value;
@@ -51,11 +65,11 @@ const Login = () => {
                 <div className="w-full mt-5 border-t-2 border-gray-500">
                     <h1 className="text-xl text-center">Login With</h1>
                     <div className="w-full mt-3 flex justify-evenly">
-                        <button>
+                        <button onClick={googleClicked}>
                             <img src={google} alt="" srcset="" className="w-[50px] h-[50px]" />
                             <h1 className="text-center text-xl">Google</h1>
                         </button>
-                        <button>
+                        <button onClick={gitClicked}>
                             <img src={git} alt="" srcset="" className="w-[50px] h-[50px]" />
                             <h1 className="text-center text-xl">Github</h1>
                         </button>

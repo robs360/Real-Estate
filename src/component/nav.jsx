@@ -11,6 +11,7 @@ const Nav = () => {
             .then(res => console.log(res.user))
             .catch(error => console.error(error))
     }
+    console.log(url)
     return (
         <div className="navbar text-white bg-base-100 w-[98%] md:w-[95%] mx-auto bg-blue-900 mb-14">
             <div className="navbar-start">
