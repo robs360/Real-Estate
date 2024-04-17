@@ -63,7 +63,7 @@ const Login = () => {
                 <form onSubmit={onSubmit}>
 
                     <input type="email"    name="email" placeholder="Email" className="input input-bordered mb-3 w-full " />
-                   <div className="w-full relative border-2 border-black">
+                   <div className="w-full relative">
                        <input type={show? 'text' :"password"} name="password" placeholder="Password" className="input input-bordered mb-3 w-full" />
                         <span className="absolute top-4 right-4">
                             {show? <button onClick={()=>{
