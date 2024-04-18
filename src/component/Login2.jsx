@@ -6,14 +6,14 @@ import { Helmet } from "react-helmet-async";
 import { AuthContext } from "./AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import eye from '../assets/images/eye.png' 
-import hidden from '../assets/images/hidden.png' 
+import eye from '../assets/images/eye.png'
+import hidden from '../assets/images/hidden.png'
 import { ToastContainer, toast } from "react-toastify";
 const Login = () => {
-    const [show,setShow]=useState(false);
-    const { signIn,googleSignin ,gitSignin,url,setUrl} = useContext(AuthContext);
-    const location=useLocation()
-    const navigate=useNavigate();
+    const [show, setShow] = useState(false);
+    const { signIn, googleSignin, gitSignin, url, setUrl } = useContext(AuthContext);
+    const location = useLocation()
+    const navigate = useNavigate();
     console.log(location)
     const subStyle = {
         backgroundImage: `url(${sec})`,
@@ -22,72 +22,78 @@ const Login = () => {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         width: '94%',
-      
+
     };
-    const googleClicked=()=>{
+    const googleClicked = () => {
         googleSignin()
-        .then(res=>{console.log(res.user)
-         setUrl(res.user.photoURL)
-         console.log(url)
-        })
-        .catch(error=>console.error(error))
+            .then(res => {
+                console.log(res.user)
+                setUrl(res.user.photoURL)
+                console.log(url)
+            })
+            .catch(error => console.error(error))
     }
-    const gitClicked=()=>{
-         gitSignin()
-        .then(res=>{console.log(res.user)
-          
-        })
-        .catch(error=>{console.error(error)
-        
-        })
+    const gitClicked = () => {
+        gitSignin()
+            .then(res => {
+                console.log(res.user)
+
+            })
+            .catch(error => {
+                console.error(error)
+
+            })
     }
-    const onSubmit=(e)=>{
+    const onSubmit = (e) => {
         e.preventDefault();
-        const Email=e.target.email.value;
-        const Password=e.target.password.value;
-        console.log(Email,' ',Password)
-        signIn(Email,Password)
-        .then(res=>{console.log(res.user)
-           navigate(location?.state? location.state:'/')
-        })
-        .catch(error=>{console.error(error)
-          alert('something went worng')
-        })
+        const Email = e.target.email.value;
+        const Password = e.target.password.value;
+        console.log(Email, ' ', Password)
+        signIn(Email, Password)
+            .then(res => {
+                console.log(res.user)
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.error(error)
+                alert('something went worng')
+            })
     }
 
     return (
         <div className="w-[95%] mx-auto min-h-[80vh]" style={subStyle}>
-           
+
             <Helmet>
                 <title>Login</title>
             </Helmet>
             <h1 className="text-5xl text-blue-900 font-semibold text-center mt-5 mb-5">
                 Login Here</h1>
-            <div className="bg-[#ffffff80] w-[360px]
+            <div className="relative bg-[#ffffff80] w-[360px]
                  md:w-[540px] mx-auto rounded-md p-4">
 
                 <form onSubmit={onSubmit}>
 
-                    <input type="email"    name="email" placeholder="Email" className="input input-bordered mb-3 w-full " />
-                   <div className="w-full relative">
-                       <input type={show? 'text' :"password"} name="password" placeholder="Password" className="input input-bordered mb-3 w-full" />
-                        <span className="absolute top-4 right-4">
-                            {show? <button onClick={()=>{
-                                setShow(false)
-                            }}>
-                                   <img className="w-[20px] h-[20px]" 
-                                   src={eye} alt="" srcset="" />
-                            </button>
-                            :<button onClick={()=>{
-                                setShow(true)
-                            }}>
-                                   <img className="w-[20px] h-[20px]"
-                                    src={hidden} alt="" srcset="" />
-                            </button>}
-                        </span>
-                   </div>
+                    <input type="email" name="email" placeholder="Email" className="input input-bordered mb-3 w-full " />
+                    <div className="w-full relative">
+                        <input type={show ? 'text' : "password"} name="password" placeholder="Password" className="input input-bordered mb-3 w-full" />
+
+                    </div>
                     <button type="submit" className="btn glass text-xl font-semibold text-center w-full">Login</button>
                 </form>
+                <span className="absolute top-[90px] right-5">
+                    {show ? <button onClick={() => {
+                        setShow(false)
+                    }}>
+                        <img className="w-[20px] h-[20px]"
+                            src={eye} alt="" srcset="" />
+                    </button>
+                        : <button onClick={() => {
+                            setShow(true)
+                        }}>
+                            <img className="w-[20px] h-[20px]"
+                                src={hidden} alt="" srcset="" />
+                        </button>}
+                </span>
                 <div className="w-full mt-5 border-t-2 border-gray-500">
                     <h1 className="text-xl text-center">Login With</h1>
                     <div className="w-full mt-3 flex justify-evenly">
