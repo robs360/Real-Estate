@@ -1,8 +1,25 @@
 import React, { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "./firebase.config";
 
+const auth=getAuth(app)
 const Update = () => {
     const { user } = useContext(AuthContext);
+    
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+         const Name=e.target.name.value;
+         const photo=e.target.photo.value;
+         console.log(Name,' ',photo);
+        updateProfile(auth.currentUser, {
+            displayName:Name, photoURL: photo
+          }).then(() => {
+              console.log('yes')
+          }).catch((error) => {
+            console.log('No')
+          });
+    }
     return (
         <div className="w-[100%]">
 
@@ -29,13 +46,13 @@ const Update = () => {
                 </div>
             </div>
             <div className="w-[350px] md:w-[420px] mx-auto">
-                <form>
+                <form onSubmit={handleSubmit}>
 
                     <input type="text" name="name" placeholder="Name"
                      className="input input-bordered mb-3 w-full " />
                     <input type="text" name="photo"  placeholder="Photo Url" 
                     className="input input-bordered mb-3 w-full "/>
-                    <button type="submit" className="bg-blue-900 btn glass text-xl font-semibold text-center w-full">Login</button>
+                    <button type="submit" className="bg-blue-900 btn glass text-xl font-semibold text-center w-full">Update</button>
                 </form>
             </div>
         </div>
