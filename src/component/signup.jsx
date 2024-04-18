@@ -6,20 +6,30 @@ import eye from '../assets/images/eye.png'
 import hidden from '../assets/images/hidden.png'
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "./firebase.config";
+const auth=getAuth(app);
 const Signup = () => {
     const { createUser, setUrl, url } = useContext(AuthContext);
     const [error, setError] = useState('')
     const [Success, setSuccess] = useState('')
     const [show, setShow] = useState(false);
+   
     const handleSubmit = (e) => {
+        e.preventDefault();
         setError('');
         setSuccess('')
-        e.preventDefault();
+     
+     
         const Name = e.target.name.value;
         const Email = e.target.email.value;
         const photo = e.target.photo.value;
         const Password = e.target.password.value;
-        if (Password.length < 6) {
+        if (!Name || !Email || !photo || !Password) {
+            setError('Please fill all fields');
+            return;
+        }
+       else if (Password.length < 6) {
             setError('Password should be gatherthen 6 len')
             return
         }
@@ -36,6 +46,16 @@ const Signup = () => {
             .then(res => {
                 console.log(res.user)
                 setSuccess('Register done Successfully')
+
+                
+
+                updateProfile(auth.currentUser, {
+                    displayName:Name, photoURL: photo
+                  }).then(() => {
+                      console.log('yes')
+                  }).catch((error) => {
+                    console.log('No')
+                  });
             })
             .catch(error => {
                 console.error(error)

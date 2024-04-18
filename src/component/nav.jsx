@@ -60,7 +60,7 @@ const Nav = () => {
                     user ? (
                         <div className="flex items-center space-x-2">
                              <img className="w-[30px] h-[30px] rounded-[50%]"
-                              src={url} alt="" srcset="" />
+                              src={user.photoURL} alt="" srcset="" />
                             <button onClick={handleClick} 
                             className="btn glass text-xl font-semibold text-white">
                                 Logout</button>
