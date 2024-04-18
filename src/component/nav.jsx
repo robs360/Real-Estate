@@ -34,6 +34,10 @@ const Nav = () => {
                         <Link to={'/up'}>
                             <li className="text-[17px] font-medium"><a>Update Profile</a></li>
                         </Link>
+
+                        <Link to={'/user'}>
+                            <li className="text-[17px] font-medium"><a>User Profile</a></li>
+                        </Link>
                     </ul>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -57,6 +61,9 @@ const Nav = () => {
                     </Link>
                     <Link to={'/up'}>
                         <li className="text-[17px] font-medium"><a>Update Profile</a></li>
+                    </Link>
+                    <Link to={'/user'}>
+                        <li className="text-[17px] font-medium"><a>User Profile</a></li>
                     </Link>
                 </ul>
             </div>

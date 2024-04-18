@@ -16,6 +16,7 @@ import Signup from './component/signup.jsx';
 import Contact from './component/Contact.jsx';
 import Private from './component/private.jsx';
 import Update from './component/Update.jsx';
+import Profile from './component/userPrifile.jsx';
 
 
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: '/up',
         element: <Update></Update>
+      },
+      {
+        path: '/user',
+        element: <Private><Profile></Profile></Private>
       }
     ]
   },
