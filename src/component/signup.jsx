@@ -10,7 +10,7 @@ import { getAuth, updateProfile } from "firebase/auth";
 import app from "./firebase.config";
 const auth=getAuth(app);
 const Signup = () => {
-    const { createUser, setUrl, url } = useContext(AuthContext);
+    const { createUser, setUrl, url,user } = useContext(AuthContext);
     const [error, setError] = useState('')
     const [Success, setSuccess] = useState('')
     const [show, setShow] = useState(false);
@@ -96,7 +96,11 @@ const Signup = () => {
                         <input type={show ? 'text' : "password"} name="password" placeholder="Password" className="input input-bordered mb-3 w-full" />
 
                     </div>
-                    <button type="submit" className="btn glass text-xl font-semibold text-center w-full">Register</button>
+                    <button type="submit" className="btn glass text-xl glass font-semibold text-center w-full">Register
+                    
+                    </button>
+                     
+                     
                 </form>
 
                 <span className="absolute top-[208px] right-6">

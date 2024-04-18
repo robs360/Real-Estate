@@ -7,7 +7,7 @@ const Nav = () => {
     const { user, logOut, url } = useContext(AuthContext);
     console.log(user);
     const handleClick = () => {
-             logOut()
+        logOut()
             .then(res => console.log(res.user))
             .catch(error => console.error(error))
     }
@@ -31,6 +31,9 @@ const Nav = () => {
                         <Link to={'/con'}>
                             <li className="text-[17px] font-medium"><a>Contact Us</a></li>
                         </Link>
+                        <Link to={'/up'}>
+                            <li className="text-[17px] font-medium"><a>Update Profile</a></li>
+                        </Link>
                     </ul>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -52,6 +55,9 @@ const Nav = () => {
                     <Link to={'/con'}>
                         <li className="text-[17px] font-medium"><a>Contact Us</a></li>
                     </Link>
+                    <Link to={'/up'}>
+                        <li className="text-[17px] font-medium"><a>Update Profile</a></li>
+                    </Link>
                 </ul>
             </div>
 
@@ -59,10 +65,10 @@ const Nav = () => {
                 {
                     user ? (
                         <div className="flex items-center space-x-2">
-                             <img className="w-[30px] h-[30px] rounded-[50%]"
-                              src={user.photoURL} alt="" srcset="" />
-                            <button onClick={handleClick} 
-                            className="btn glass text-xl font-semibold text-white">
+                            <img title={`${user.displayName}`} className="w-[30px] h-[30px] rounded-[50%]"
+                                src={user.photoURL} alt="" srcset="" />
+                            <button onClick={handleClick}
+                                className="btn glass text-xl font-semibold text-white">
                                 Logout</button>
                         </div>
 
