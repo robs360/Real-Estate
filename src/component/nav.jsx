@@ -63,7 +63,11 @@ const Nav = () => {
                         <li className="text-[17px] font-medium"><a>Update Profile</a></li>
                     </Link>
                     <Link to={'/user'}>
-                        <li className="text-[17px] font-medium"><a>User Profile</a></li>
+                        <li className="text-[17px] font-medium"><a>
+                              {user? <img title={`${user.displayName}`} className="w-[30px] h-[30px] rounded-[50%]"
+                                src={user.photoURL} alt="" srcset="" />
+                            :'Sign in'}
+                            </a></li>
                     </Link>
                 </ul>
             </div>
@@ -72,8 +76,7 @@ const Nav = () => {
                 {
                     user ? (
                         <div className="flex items-center space-x-2">
-                            <img title={`${user.displayName}`} className="w-[30px] h-[30px] rounded-[50%]"
-                                src={user.photoURL} alt="" srcset="" />
+                           
                             <button onClick={handleClick}
                                 className="btn glass text-xl font-semibold text-white">
                                 Logout</button>

@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom';
 import App from './App.jsx'
 import './index.css'
 import {
@@ -17,13 +17,14 @@ import Contact from './component/Contact.jsx';
 import Private from './component/private.jsx';
 import Update from './component/Update.jsx';
 import Profile from './component/userPrifile.jsx';
-
+import Error from './component/error.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: '/',

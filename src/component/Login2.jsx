@@ -52,6 +52,7 @@ const Login = () => {
         signIn(Email, Password)
             .then(res => {
                 console.log(res.user)
+                alert('Wow!you are in here')
                 navigate(location?.state ? location.state : '/')
             })
             .catch(error => {

@@ -47,8 +47,8 @@ const Signup = () => {
                 console.log(res.user)
                 setSuccess('Register done Successfully')
 
-                
-
+              
+               alert('Wow!you are in here')
                 updateProfile(auth.currentUser, {
                     displayName:Name, photoURL: photo
                   }).then(() => {
@@ -79,7 +79,7 @@ const Signup = () => {
 
     return (
         <div className="w-[95%] mx-auto" style={subStyle}>
-
+            
             <Helmet>
                 <title> Register</title>
             </Helmet>
