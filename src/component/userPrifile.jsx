@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "./AuthProvider";
 import img from '../assets/images/img.jpeg'
+import Footer from "./footer";
 const Profile = () => {
     const { user } = useContext(AuthContext);
     const [status, setStatus] = useState(false);
@@ -8,7 +9,7 @@ const Profile = () => {
         <div>
             <div className="bg-[#ffffff] mx-auto item-center flex w-[95%] md:w-[80%] justify-evenly flex-col md:flex-row">
                 <div>
-                    <img src={user?.photoURL}
+                    <img title={`${user.displayName}`} src={user?.photoURL}
                         className="w-[100px] h-[100px] rounded-[50%] mx-auto" alt="" srcset="" />
                     <h1 className="text-xl font-medium pt-3 border-gray-500 pb-3">Name: {user?.displayName}</h1>
                     <h1 className="text-xl font-medium pt-3 border-t-2 border-gray-500 pb-3">Email: {user?.email}</h1>
@@ -32,6 +33,7 @@ const Profile = () => {
             </div>
 
             <h1 className="text-xl font-semibold text-center mt-10">Good Bye</h1>
+      
         </div>
     )
 }
