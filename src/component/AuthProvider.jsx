@@ -13,13 +13,14 @@ const googleprovider=new GoogleAuthProvider();
 const githubProvider=new GithubAuthProvider()
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
+   
     const [user, setUser] = useState(null);
     const [url, setUrl] = useState('');
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
     // signin part
-
+   
     const signIn = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }

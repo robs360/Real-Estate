@@ -69,7 +69,7 @@ const Login = () => {
             </Helmet>
             <h1 className="text-5xl text-blue-900 font-semibold text-center mt-5 mb-5">
                 Login Here</h1>
-            <div className="relative bg-[#ffffff80] w-[360px]
+            <div className="relative bg-[#ffffffcc] w-[360px]
                  md:w-[540px] mx-auto rounded-md p-4">
 
                 <form onSubmit={onSubmit}>
