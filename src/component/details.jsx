@@ -4,9 +4,9 @@ import { useLoaderData, useParams } from "react-router-dom";
 const Details = () => {
     const info = useLoaderData();
     const { id } = useParams();
-    console.log(id);
+   
     const singleInfo = info.find(item => item.id == id);
-    console.log(singleInfo);
+    
     return (
         <div className="w-[95%] mx-auto mt-16">
             <div className="w-full min-h-[80vh] flex md:flex-row flex-col space-x-3 md:space-x-6 justify-center mt-11">
